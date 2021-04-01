@@ -44,10 +44,41 @@ export const Content = styled.View`
 `;
 
 export const ForgotPassword = styled.TouchableOpacity`
-  margin: 24px auto 0;
+  margin-bottom: 16px;
 `;
 
 export const ForgotPasswordText = styled.Text`
+  color: ${({ theme }) => theme.colors.green};
+  font-family: ${({ theme }) => theme.typography.medium};
+  font-size: 16px;
+`;
+
+export const CreateAccountWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0 16px;
+  margin-top: 16px;
+`;
+
+export const CreateAccountSeparator = styled.View`
+  height: 1px;
+  flex: 1;
+  background: ${({ theme }) => theme.colors.darkGray};
+`;
+
+export const CreateAccountSeparatorText = styled.Text`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.darkGray};
+  font-family: ${({ theme }) => theme.typography.regular};
+  margin: 0 16px;
+`;
+
+export const CreateAccountButton = styled.TouchableOpacity`
+  margin: 16px auto 0;
+`;
+
+export const CreateAccountButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.green};
   font-family: ${({ theme }) => theme.typography.medium};
   font-size: 16px;

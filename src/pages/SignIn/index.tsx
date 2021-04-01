@@ -9,7 +9,19 @@ import logoImg from '../../../assets/img/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Wrapper, Container, Logo, ContentWrapper, ForgotPassword, ForgotPasswordText } from './styles';
+import {
+  Wrapper,
+  Container,
+  Logo,
+  ContentWrapper,
+  ForgotPassword,
+  ForgotPasswordText,
+  CreateAccountWrapper,
+  CreateAccountSeparatorText,
+  CreateAccountSeparator,
+  CreateAccountButton,
+  CreateAccountButtonText,
+} from './styles';
 
 const SignIn = () => {
   const { handleSubmit, ...rest } = useForm();
@@ -37,12 +49,22 @@ const SignIn = () => {
 
             <Input name="password" icon="lock" placeholder="Password" secureTextEntry returnKeyType="send" />
 
+            <ForgotPassword>
+              <ForgotPasswordText>Forgot your password?</ForgotPasswordText>
+            </ForgotPassword>
+
             <Button onPress={handleSubmit(onSubmit)}>Sign In</Button>
           </FormProvider>
 
-          <ForgotPassword>
-            <ForgotPasswordText>Forgot your password?</ForgotPasswordText>
-          </ForgotPassword>
+          <CreateAccountWrapper>
+            <CreateAccountSeparator />
+            <CreateAccountSeparatorText>OR</CreateAccountSeparatorText>
+            <CreateAccountSeparator />
+          </CreateAccountWrapper>
+
+          <CreateAccountButton>
+            <CreateAccountButtonText>Create your account</CreateAccountButtonText>
+          </CreateAccountButton>
         </ContentWrapper>
       </Container>
     </Wrapper>
