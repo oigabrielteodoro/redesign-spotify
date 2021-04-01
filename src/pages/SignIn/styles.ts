@@ -34,11 +34,21 @@ export const ContentWrapper = styled.ScrollView.attrs({
 `;
 
 export const Logo = styled.Image`
-  margin: 130px auto 0;
+  margin: 130px auto 70px;
 `;
 
 export const Content = styled.View`
   margin-top: 70px;
 
   width: 100%;
+`;
+
+export const ForgotPassword = styled.TouchableOpacity`
+  margin: 24px auto 0;
+`;
+
+export const ForgotPasswordText = styled.Text`
+  color: ${({ theme }) => theme.colors.green};
+  font-family: ${({ theme }) => theme.typography.medium};
+  font-size: 16px;
 `;
