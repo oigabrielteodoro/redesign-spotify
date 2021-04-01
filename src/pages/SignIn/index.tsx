@@ -1,13 +1,19 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { Container } from './styles';
+import logoImg from '../../../assets/img/logo.png';
+
+import { Wrapper, Container, Logo } from './styles';
 
 const SignIn = () => {
   return (
-    <Container>
-      <Text>SignIn</Text>
-    </Container>
+    <Wrapper>
+      <Container>
+        <Logo source={logoImg} />
+
+        <Text>SignIn</Text>
+      </Container>
+    </Wrapper>
   );
 };
 
