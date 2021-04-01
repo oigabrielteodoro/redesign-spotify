@@ -16,13 +16,29 @@ export const Wrapper = styled(LinearGradient).attrs({
   colors: [dark.colors.black, '#202020'],
 })`
   flex: 1;
+
+  padding: 0 30px 50px;
 `;
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.KeyboardAvoidingView`
   flex: 1;
   align-items: center;
 `;
 
+export const ContentWrapper = styled.ScrollView.attrs({
+  keyboardShouldPersistTaps: 'handled',
+  contentContainerStyle: { flex: 1 },
+  showsVerticalScrollIndicator: false,
+})`
+  width: 100%;
+`;
+
 export const Logo = styled.Image`
-  margin-top: 100px;
+  margin: 130px auto 0;
+`;
+
+export const Content = styled.View`
+  margin-top: 70px;
+
+  width: 100%;
 `;
