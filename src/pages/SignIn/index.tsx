@@ -1,13 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 
-import { Platform } from 'react-native';
+import { Platform, Alert } from 'react-native';
+
+import { useNavigation } from '@react-navigation/native';
 
 import { useForm, FormProvider } from 'react-hook-form';
+
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import logoImg from '../../../assets/img/logo.png';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+
+import getSignInSchema from './schemas/getSignInSchema';
 
 import {
   Wrapper,
@@ -24,11 +30,21 @@ import {
 } from './styles';
 
 const SignIn = () => {
-  const { handleSubmit, ...rest } = useForm();
+  const navigation = useNavigation();
+
+  const passwordInputRef = useRef<any>(null);
+
+  const { handleSubmit, ...rest } = useForm({
+    resolver: yupResolver(getSignInSchema()),
+  });
 
   const onSubmit = useCallback(() => {
-    console.log('submit');
-  }, []);
+    Alert.alert('Authenticated!', 'You have been authenticated to your Spotify account!');
+
+    setTimeout(() => {
+      navigation.navigate('Home');
+    }, 1000);
+  }, [navigation]);
 
   return (
     <Wrapper>
@@ -45,9 +61,22 @@ const SignIn = () => {
               returnKeyType="next"
               autoCapitalize="none"
               keyboardType="email-address"
+              onSubmitEditing={() => {
+                passwordInputRef.current?.focus();
+              }}
             />
 
-            <Input name="password" icon="lock" placeholder="Password" secureTextEntry returnKeyType="send" />
+            <Input
+              inputRef={passwordInputRef}
+              name="password"
+              icon="lock"
+              placeholder="Password"
+              secureTextEntry
+              returnKeyType="send"
+              onSubmitEditing={() => {
+                handleSubmit(onSubmit);
+              }}
+            />
 
             <ForgotPassword>
               <ForgotPasswordText>Forgot your password?</ForgotPasswordText>

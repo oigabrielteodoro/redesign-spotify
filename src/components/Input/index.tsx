@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable react/require-default-props */
+import React, { useEffect, useState, useRef } from 'react';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
-import { TextInputProps } from 'react-native';
+import { TextInputProps, TextInput as ReactTextInput } from 'react-native';
 
 import { useFormContext } from 'react-hook-form';
 
@@ -10,14 +11,15 @@ import { useTheme } from 'styled-components';
 
 import { Container, TextInput, Icon as IconElement } from './styles';
 
-interface InputProps extends TextInputProps {
+interface InputProps extends Omit<TextInputProps, 'ref'> {
+  inputRef?: any;
   name: string;
   icon: string;
 }
 
 FeatherIcon.loadFont();
 
-const Input = ({ name, icon: Icon, defaultValue, ...rest }: InputProps) => {
+const Input = ({ inputRef, name, icon: Icon, defaultValue, ...rest }: InputProps) => {
   const theme = useTheme();
 
   const { register, unregister, setValue, watch } = useFormContext();
@@ -50,6 +52,7 @@ const Input = ({ name, icon: Icon, defaultValue, ...rest }: InputProps) => {
       {Icon && <IconElement name={Icon} size={20} isFilled={isFilled} isFocused={isFocused} />}
 
       <TextInput
+        ref={inputRef}
         onBlur={handleBlur}
         onFocus={handleFocus}
         keyboardAppearance="dark"
