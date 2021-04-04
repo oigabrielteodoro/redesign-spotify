@@ -13,9 +13,10 @@ interface IconProps {
   isFocused: boolean;
 }
 
-interface TextInputLabel {
-  isFocused: boolean;
-}
+export const Wrapper = styled.View`
+  align-items: flex-start;
+  margin-bottom: 16px;
+`;
 
 export const Container = styled.View<ContainerProps>`
   background: ${({ theme }) => theme.colors.dark};
@@ -27,7 +28,6 @@ export const Container = styled.View<ContainerProps>`
   height: 60px;
 
   border-radius: 5px;
-  margin-bottom: 16px;
 
   padding: 0 16px;
 
@@ -50,7 +50,7 @@ export const Container = styled.View<ContainerProps>`
 export const TextInput = styled.TextInput`
   flex: 1;
   font-size: 16px;
-  font-family: 'Rubik-Regular';
+  font-family: ${({ theme }) => theme.typography.regular};
   color: ${({ theme }) => theme.colors.lightGray};
 
   position: relative;
@@ -66,4 +66,21 @@ export const Icon = styled(FeatherIcon)<IconProps>`
     css`
       color: ${theme.colors.green};
     `};
+`;
+
+export const ErrorContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+
+  margin-top: 8px;
+`;
+
+export const ErrorIcon = styled(FeatherIcon)`
+  margin-right: 8px;
+`;
+
+export const ErrorText = styled.Text`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.red};
+  font-family: ${({ theme }) => theme.typography.regular};
 `;

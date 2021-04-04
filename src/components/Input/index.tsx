@@ -5,35 +5,35 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import { TextInputProps, TextInput as ReactTextInput } from 'react-native';
 
-import { useFormContext } from 'react-hook-form';
+import { RegisterOptions, useController, useFormContext } from 'react-hook-form';
 
 import { useTheme } from 'styled-components';
 
-import { Container, TextInput, Icon as IconElement } from './styles';
+import { Wrapper, Container, TextInput, Icon as IconElement, ErrorContainer, ErrorIcon, ErrorText } from './styles';
 
 interface InputProps extends Omit<TextInputProps, 'ref'> {
   inputRef?: any;
   name: string;
   icon: string;
+  rules?: Exclude<RegisterOptions, 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
 }
 
 FeatherIcon.loadFont();
 
-const Input = ({ inputRef, name, icon: Icon, defaultValue, ...rest }: InputProps) => {
+const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }: InputProps) => {
   const theme = useTheme();
 
-  const { register, unregister, setValue, watch } = useFormContext();
+  const { watch, control, errors } = useFormContext();
 
-  const [isFilled, setIsFilled] = useState(!!defaultValue && defaultValue.length > 0);
+  const { field } = useController({
+    name,
+    control,
+    rules,
+    defaultValue,
+  });
+
   const [isFocused, setIsFocused] = useState(false);
-
-  useEffect(() => {
-    register(name);
-
-    return () => {
-      unregister(name);
-    };
-  }, [name, register, unregister]);
+  const [isFilled, setIsFilled] = useState(!!defaultValue && defaultValue.length > 0);
 
   function handleFocus() {
     setIsFocused(true);
@@ -47,21 +47,34 @@ const Input = ({ inputRef, name, icon: Icon, defaultValue, ...rest }: InputProps
     setIsFilled(!!fieldValue && fieldValue.length > 0);
   }
 
-  return (
-    <Container isFilled={isFilled} isFocused={isFocused} isErrored={false}>
-      {Icon && <IconElement name={Icon} size={20} isFilled={isFilled} isFocused={isFocused} />}
+  const errorMessage = errors[name];
 
-      <TextInput
-        ref={inputRef}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        keyboardAppearance="dark"
-        defaultValue={defaultValue}
-        onChangeText={text => setValue(name, text)}
-        placeholderTextColor={theme.colors.lightGray}
-        {...rest}
-      />
-    </Container>
+  return (
+    <Wrapper>
+      <Container isFilled={isFilled} isFocused={isFocused} isErrored={false}>
+        {Icon && <IconElement name={Icon} size={20} isFilled={isFilled} isFocused={isFocused} />}
+
+        <TextInput
+          ref={inputRef}
+          value={field.value}
+          onBlur={handleBlur}
+          onFocus={handleFocus}
+          keyboardAppearance="dark"
+          defaultValue={defaultValue}
+          onChangeText={field.onChange}
+          placeholderTextColor={theme.colors.lightGray}
+          {...rest}
+        />
+      </Container>
+
+      {errorMessage && (
+        <ErrorContainer>
+          <ErrorIcon name="alert-circle" size={20} color={theme.colors.red} />
+
+          <ErrorText>{errorMessage.message}</ErrorText>
+        </ErrorContainer>
+      )}
+    </Wrapper>
   );
 };
 

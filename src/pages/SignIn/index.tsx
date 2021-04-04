@@ -6,14 +6,15 @@ import { useNavigation } from '@react-navigation/native';
 
 import { useForm, FormProvider } from 'react-hook-form';
 
-import { yupResolver } from '@hookform/resolvers/yup';
-
 import logoImg from '../../../assets/img/logo.png';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import getSignInSchema from './schemas/getSignInSchema';
+import SignInRules from './rules/SignInRules';
+
+import SignInFields from './dtos/SignInFields';
+import SignInValues from './dtos/SignInValues';
 
 import {
   Wrapper,
@@ -34,17 +35,17 @@ const SignIn = () => {
 
   const passwordInputRef = useRef<any>(null);
 
-  const { handleSubmit, ...rest } = useForm({
-    resolver: yupResolver(getSignInSchema()),
+  const { handleSubmit, ...rest } = useForm<SignInValues>({
+    mode: 'all',
   });
 
-  const onSubmit = useCallback(() => {
+  function onSubmit(_: SignInValues) {
     Alert.alert('Authenticated!', 'You have been authenticated to your Spotify account!');
 
     setTimeout(() => {
       navigation.navigate('Home');
     }, 1000);
-  }, [navigation]);
+  }
 
   return (
     <Wrapper>
@@ -54,13 +55,14 @@ const SignIn = () => {
 
           <FormProvider handleSubmit={handleSubmit} {...rest}>
             <Input
-              name="email"
+              name={SignInFields.email}
               icon="mail"
               autoCorrect={false}
               placeholder="E-mail"
               returnKeyType="next"
               autoCapitalize="none"
               keyboardType="email-address"
+              rules={SignInRules.email}
               onSubmitEditing={() => {
                 passwordInputRef.current?.focus();
               }}
@@ -68,11 +70,12 @@ const SignIn = () => {
 
             <Input
               inputRef={passwordInputRef}
-              name="password"
+              name={SignInFields.password}
               icon="lock"
               placeholder="Password"
               secureTextEntry
               returnKeyType="send"
+              rules={SignInRules.password}
               onSubmitEditing={() => {
                 handleSubmit(onSubmit);
               }}
