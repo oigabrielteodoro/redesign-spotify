@@ -1,10 +1,22 @@
+import { RegisterOptions } from 'react-hook-form';
+
+import patterns from '../../../patterns';
+
 import SignInFields from '../dtos/SignInFields';
 
 const { email, password } = SignInFields;
 
-export default {
+interface SignInRules {
+  [key: string]: Exclude<RegisterOptions, 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
+}
+
+const rules: SignInRules = {
   [email]: {
     required: 'Email is required',
+    pattern: {
+      value: patterns.email,
+      message: 'Invalid email',
+    },
   },
   [password]: {
     required: 'Password is required',
@@ -14,3 +26,5 @@ export default {
     },
   },
 };
+
+export default rules;
