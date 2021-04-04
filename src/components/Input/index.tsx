@@ -8,12 +8,22 @@ import { useTheme } from 'styled-components';
 
 import useIcons from '../../hooks/useIcons';
 
-import { Wrapper, Container, TextInput, Icon as IconElement, ErrorContainer, ErrorIcon, ErrorText } from './styles';
+import {
+  Wrapper,
+  Container,
+  TextInput,
+  Icon as IconElement,
+  ErrorContainer,
+  ErrorIcon,
+  ErrorText,
+  ClearContainer,
+} from './styles';
 
-interface InputProps extends Omit<TextInputProps, 'ref'> {
+interface InputProps extends Omit<TextInputProps, 'ref' | 'defaultValue'> {
   inputRef?: any;
   name: string;
   icon: string;
+  defaultValue?: string;
   rules?: Exclude<RegisterOptions, 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
 }
 
@@ -22,7 +32,7 @@ const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }
 
   const { getIcon } = useIcons();
 
-  const { watch, control, errors } = useFormContext();
+  const { watch, setValue, control, errors } = useFormContext();
 
   const { field } = useController({
     name,
@@ -34,6 +44,9 @@ const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(!!defaultValue && defaultValue.length > 0);
 
+  const fieldValue = watch(name);
+  const errorMessage = errors[name];
+
   function handleFocus() {
     setIsFocused(true);
   }
@@ -41,12 +54,12 @@ const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }
   function handleBlur() {
     setIsFocused(false);
 
-    const fieldValue = watch(name);
-
     setIsFilled(!!fieldValue && fieldValue.length > 0);
   }
 
-  const errorMessage = errors[name];
+  function handleClear() {
+    setValue(name, undefined);
+  }
 
   return (
     <Wrapper>
@@ -64,6 +77,10 @@ const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }
           placeholderTextColor={theme.colors.lightGray}
           {...rest}
         />
+
+        {fieldValue?.length > 0 && (
+          <ClearContainer onTouchEnd={handleClear}>{getIcon('x', 12, theme.colors.gray, 'feather')}</ClearContainer>
+        )}
       </Container>
 
       {errorMessage && (

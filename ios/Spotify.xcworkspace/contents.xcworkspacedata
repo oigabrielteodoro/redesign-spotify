@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Spotify.xcodeproj">
+      location = "group:/Users/gabrielteodoro/Documents/www/redesign/Spotify/ios/Spotify.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { Platform, Alert } from 'react-native';
+import { Platform, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,9 +17,7 @@ import SignUpFields from './dtos/SignUpFields';
 
 import {
   Wrapper,
-  Container,
   Logo,
-  ContentWrapper,
   BackPageWrapper,
   BackPageSeparatorText,
   BackPageSeparator,
@@ -45,8 +43,12 @@ const SignUp = () => {
 
   return (
     <Wrapper>
-      <Container style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} enabled>
-        <ContentWrapper>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} enabled>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}
+          showsVerticalScrollIndicator={false}
+        >
           <Logo source={logoImg} />
 
           <FormProvider handleSubmit={handleSubmit} {...rest}>
@@ -103,8 +105,8 @@ const SignUp = () => {
           <BackPageButton onPress={() => navigation.navigate('SignIn')}>
             <BackPageButtonText>Back to Sign In</BackPageButtonText>
           </BackPageButton>
-        </ContentWrapper>
-      </Container>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </Wrapper>
   );
 };

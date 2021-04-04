@@ -20,19 +20,6 @@ export const Wrapper = styled(LinearGradient).attrs({
   padding: 0 30px 50px;
 `;
 
-export const Container = styled.KeyboardAvoidingView`
-  flex: 1;
-  align-items: center;
-`;
-
-export const ContentWrapper = styled.ScrollView.attrs({
-  keyboardShouldPersistTaps: 'handled',
-  contentContainerStyle: { flex: 1 },
-  showsVerticalScrollIndicator: false,
-})`
-  width: 100%;
-`;
-
 export const Logo = styled.Image`
   margin: 130px auto 70px;
 `;

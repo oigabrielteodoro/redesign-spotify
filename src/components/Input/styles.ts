@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components/native';
 
+import { lighten } from 'polished';
+
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 interface ContainerProps {
@@ -83,4 +85,15 @@ export const ErrorText = styled.Text`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.red};
   font-family: ${({ theme }) => theme.typography.regular};
+`;
+
+export const ClearContainer = styled.View`
+  height: 20px;
+  width: 20px;
+
+  border-radius: 15px;
+  background: #202020;
+
+  align-items: center;
+  justify-content: center;
 `;
