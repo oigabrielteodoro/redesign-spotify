@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
+import { Platform } from 'react-native';
 import dark from '../../styles/themes/dark';
 
 export const Wrapper = styled(LinearGradient).attrs({
@@ -20,6 +21,12 @@ export const Wrapper = styled(LinearGradient).attrs({
   padding: 0 30px 50px;
 `;
 
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Logo = styled.Image`
   margin: 130px auto 70px;
 `;
@@ -35,7 +42,6 @@ export const BackPageWrapper = styled.View`
   align-items: center;
 
   padding: 0 16px;
-  margin-top: 16px;
 `;
 
 export const BackPageSeparator = styled.View`

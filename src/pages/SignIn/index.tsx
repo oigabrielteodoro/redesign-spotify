@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { Platform, Alert } from 'react-native';
+import { Platform, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,7 +19,6 @@ import {
   Wrapper,
   Container,
   Logo,
-  ContentWrapper,
   ForgotPasswordButton,
   ForgotPasswordText,
   CreateAccountWrapper,
@@ -46,56 +45,62 @@ const SignIn = () => {
 
   return (
     <Wrapper>
-      <Container style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} enabled>
-        <ContentWrapper>
-          <Logo source={logoImg} />
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} enabled>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}
+          showsVerticalScrollIndicator={false}
+        >
+          <Container>
+            <Logo source={logoImg} />
 
-          <FormProvider handleSubmit={handleSubmit} {...rest}>
-            <Input
-              name={SignInFields.email}
-              icon="mail"
-              autoCorrect={false}
-              placeholder="E-mail"
-              returnKeyType="next"
-              autoCapitalize="none"
-              keyboardType="email-address"
-              rules={SignInRules.email}
-              onSubmitEditing={() => {
-                passwordInputRef.current?.focus();
-              }}
-            />
+            <FormProvider handleSubmit={handleSubmit} {...rest}>
+              <Input
+                name={SignInFields.email}
+                icon="mail"
+                autoCorrect={false}
+                placeholder="E-mail"
+                returnKeyType="next"
+                autoCapitalize="none"
+                keyboardType="email-address"
+                rules={SignInRules.email}
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
+              />
 
-            <Input
-              inputRef={passwordInputRef}
-              name={SignInFields.password}
-              icon="lock"
-              placeholder="Password"
-              secureTextEntry
-              returnKeyType="send"
-              rules={SignInRules.password}
-              onSubmitEditing={() => {
-                handleSubmit(onSubmit);
-              }}
-            />
+              <Input
+                inputRef={passwordInputRef}
+                name={SignInFields.password}
+                icon="lock"
+                placeholder="Password"
+                secureTextEntry
+                returnKeyType="send"
+                rules={SignInRules.password}
+                onSubmitEditing={() => {
+                  handleSubmit(onSubmit);
+                }}
+              />
 
-            <ForgotPasswordButton onPress={() => navigation.navigate('ForgotPassword')}>
-              <ForgotPasswordText>Forgot your password?</ForgotPasswordText>
-            </ForgotPasswordButton>
+              <ForgotPasswordButton onPress={() => navigation.navigate('ForgotPassword')}>
+                <ForgotPasswordText>Forgot your password?</ForgotPasswordText>
+              </ForgotPasswordButton>
 
-            <Button onPress={handleSubmit(onSubmit)}>Sign In</Button>
-          </FormProvider>
+              <Button onPress={handleSubmit(onSubmit)}>Sign In</Button>
+            </FormProvider>
+          </Container>
+        </ScrollView>
+      </KeyboardAvoidingView>
 
-          <CreateAccountWrapper>
-            <CreateAccountSeparator />
-            <CreateAccountSeparatorText>OR</CreateAccountSeparatorText>
-            <CreateAccountSeparator />
-          </CreateAccountWrapper>
+      <CreateAccountWrapper>
+        <CreateAccountSeparator />
+        <CreateAccountSeparatorText>OR</CreateAccountSeparatorText>
+        <CreateAccountSeparator />
+      </CreateAccountWrapper>
 
-          <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
-            <CreateAccountButtonText>Create your account</CreateAccountButtonText>
-          </CreateAccountButton>
-        </ContentWrapper>
-      </Container>
+      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+        <CreateAccountButtonText>Create your account</CreateAccountButtonText>
+      </CreateAccountButton>
     </Wrapper>
   );
 };

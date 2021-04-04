@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { Platform, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { Platform, Alert, KeyboardAvoidingView, ScrollView, View } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,6 +17,7 @@ import SignUpFields from './dtos/SignUpFields';
 
 import {
   Wrapper,
+  Container,
   Logo,
   BackPageWrapper,
   BackPageSeparatorText,
@@ -49,64 +50,66 @@ const SignUp = () => {
           contentContainerStyle={{ flex: 1 }}
           showsVerticalScrollIndicator={false}
         >
-          <Logo source={logoImg} />
+          <Container>
+            <Logo source={logoImg} />
 
-          <FormProvider handleSubmit={handleSubmit} {...rest}>
-            <Input
-              name={SignUpFields.name}
-              icon="tag"
-              autoCorrect={false}
-              placeholder="Name"
-              returnKeyType="next"
-              autoCapitalize="words"
-              rules={SignUpRules.name}
-              onSubmitEditing={() => {
-                emailInputRef.current?.focus();
-              }}
-            />
+            <FormProvider handleSubmit={handleSubmit} {...rest}>
+              <Input
+                name={SignUpFields.name}
+                icon="tag"
+                autoCorrect={false}
+                placeholder="Name"
+                returnKeyType="next"
+                autoCapitalize="words"
+                rules={SignUpRules.name}
+                onSubmitEditing={() => {
+                  emailInputRef.current?.focus();
+                }}
+              />
 
-            <Input
-              inputRef={emailInputRef}
-              name={SignUpFields.email}
-              icon="mail"
-              autoCorrect={false}
-              placeholder="E-mail"
-              returnKeyType="next"
-              autoCapitalize="none"
-              keyboardType="email-address"
-              rules={SignUpRules.email}
-              onSubmitEditing={() => {
-                passwordInputRef.current?.focus();
-              }}
-            />
+              <Input
+                inputRef={emailInputRef}
+                name={SignUpFields.email}
+                icon="mail"
+                autoCorrect={false}
+                placeholder="E-mail"
+                returnKeyType="next"
+                autoCapitalize="none"
+                keyboardType="email-address"
+                rules={SignUpRules.email}
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
+              />
 
-            <Input
-              inputRef={passwordInputRef}
-              name={SignUpFields.password}
-              icon="lock"
-              placeholder="Password"
-              secureTextEntry
-              returnKeyType="send"
-              rules={SignUpRules.password}
-              onSubmitEditing={() => {
-                handleSubmit(onSubmit);
-              }}
-            />
+              <Input
+                inputRef={passwordInputRef}
+                name={SignUpFields.password}
+                icon="lock"
+                placeholder="Password"
+                secureTextEntry
+                returnKeyType="send"
+                rules={SignUpRules.password}
+                onSubmitEditing={() => {
+                  handleSubmit(onSubmit);
+                }}
+              />
 
-            <Button onPress={handleSubmit(onSubmit)}>Sign Up</Button>
-          </FormProvider>
-
-          <BackPageWrapper>
-            <BackPageSeparator />
-            <BackPageSeparatorText>OR</BackPageSeparatorText>
-            <BackPageSeparator />
-          </BackPageWrapper>
-
-          <BackPageButton onPress={() => navigation.navigate('SignIn')}>
-            <BackPageButtonText>Back to Sign In</BackPageButtonText>
-          </BackPageButton>
+              <Button onPress={handleSubmit(onSubmit)}>Sign Up</Button>
+            </FormProvider>
+          </Container>
         </ScrollView>
       </KeyboardAvoidingView>
+
+      <BackPageWrapper>
+        <BackPageSeparator />
+        <BackPageSeparatorText>OR</BackPageSeparatorText>
+        <BackPageSeparator />
+      </BackPageWrapper>
+
+      <BackPageButton onPress={() => navigation.navigate('SignIn')}>
+        <BackPageButtonText>Back to Sign In</BackPageButtonText>
+      </BackPageButton>
     </Wrapper>
   );
 };
