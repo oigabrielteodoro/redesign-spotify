@@ -20,7 +20,7 @@ import {
   Container,
   Logo,
   ContentWrapper,
-  ForgotPassword,
+  ForgotPasswordButton,
   ForgotPasswordText,
   CreateAccountWrapper,
   CreateAccountSeparatorText,
@@ -55,7 +55,7 @@ const SignIn = () => {
               name={SignInFields.email}
               icon="mail"
               autoCorrect={false}
-              placeholder="E-mail"
+              placeholder="Email"
               returnKeyType="next"
               autoCapitalize="none"
               keyboardType="email-address"
@@ -78,9 +78,9 @@ const SignIn = () => {
               }}
             />
 
-            <ForgotPassword>
+            <ForgotPasswordButton onPress={() => navigation.navigate('ForgotPassword')}>
               <ForgotPasswordText>Forgot your password?</ForgotPasswordText>
-            </ForgotPassword>
+            </ForgotPasswordButton>
 
             <Button onPress={handleSubmit(onSubmit)}>Sign In</Button>
           </FormProvider>
@@ -91,7 +91,7 @@ const SignIn = () => {
             <CreateAccountSeparator />
           </CreateAccountWrapper>
 
-          <CreateAccountButton>
+          <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
             <CreateAccountButtonText>Create your account</CreateAccountButtonText>
           </CreateAccountButton>
         </ContentWrapper>

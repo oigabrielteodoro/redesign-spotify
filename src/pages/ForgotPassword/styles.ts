@@ -43,18 +43,7 @@ export const Content = styled.View`
   width: 100%;
 `;
 
-export const ForgotPasswordButton = styled.TouchableOpacity`
-  margin-bottom: 16px;
-  margin-right: auto;
-`;
-
-export const ForgotPasswordText = styled.Text`
-  color: ${({ theme }) => theme.colors.green};
-  font-family: ${({ theme }) => theme.typography.medium};
-  font-size: 16px;
-`;
-
-export const CreateAccountWrapper = styled.View`
+export const BackPageWrapper = styled.View`
   flex-direction: row;
   align-items: center;
 
@@ -62,24 +51,24 @@ export const CreateAccountWrapper = styled.View`
   margin-top: 16px;
 `;
 
-export const CreateAccountSeparator = styled.View`
+export const BackPageSeparator = styled.View`
   height: 1px;
   flex: 1;
   background: ${({ theme }) => theme.colors.darkGray};
 `;
 
-export const CreateAccountSeparatorText = styled.Text`
+export const BackPageSeparatorText = styled.Text`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.darkGray};
   font-family: ${({ theme }) => theme.typography.regular};
   margin: 0 16px;
 `;
 
-export const CreateAccountButton = styled.TouchableOpacity`
+export const BackPageButton = styled.TouchableOpacity`
   margin: 16px auto 0;
 `;
 
-export const CreateAccountButtonText = styled.Text`
+export const BackPageButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.green};
   font-family: ${({ theme }) => theme.typography.medium};
   font-size: 16px;
