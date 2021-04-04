@@ -55,7 +55,7 @@ const SignIn = () => {
               name={SignInFields.email}
               icon="mail"
               autoCorrect={false}
-              placeholder="Email"
+              placeholder="E-mail"
               returnKeyType="next"
               autoCapitalize="none"
               keyboardType="email-address"

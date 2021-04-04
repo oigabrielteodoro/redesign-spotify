@@ -51,7 +51,7 @@ const ForgotPassword = () => {
               name={ForgotPasswordFields.email}
               icon="mail"
               autoCorrect={false}
-              placeholder="Email"
+              placeholder="E-mail"
               returnKeyType="next"
               autoCapitalize="none"
               keyboardType="email-address"

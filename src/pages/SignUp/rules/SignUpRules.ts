@@ -2,15 +2,29 @@ import { RegisterOptions } from 'react-hook-form';
 
 import patterns from '../../../patterns';
 
-import SignInFields from '../dtos/SignInFields';
+import SignUpFields from '../dtos/SignUpFields';
 
-const { email, password } = SignInFields;
+const { name, username, email, password } = SignUpFields;
 
-interface SignInRules {
+interface SignUpRules {
   [key: string]: Exclude<RegisterOptions, 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
 }
 
-const rules: SignInRules = {
+const rules: SignUpRules = {
+  [name]: {
+    required: 'Name is required',
+    pattern: {
+      value: patterns.name,
+      message: 'Enter your full name',
+    },
+  },
+  [username]: {
+    required: 'Username is required',
+    maxLength: {
+      message: 'Use a maximum of 16 characters',
+      value: 16,
+    },
+  },
   [email]: {
     required: 'E-mail is required',
     pattern: {

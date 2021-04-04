@@ -12,7 +12,7 @@ interface ForgotPasswordRules {
 
 const rules: ForgotPasswordRules = {
   [email]: {
-    required: 'Email is required',
+    required: 'E-mail is required',
     pattern: {
       value: patterns.email,
       message: 'Invalid email',
