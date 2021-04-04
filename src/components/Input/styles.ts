@@ -75,7 +75,7 @@ export const ErrorContainer = styled.View`
   margin-top: 8px;
 `;
 
-export const ErrorIcon = styled(FeatherIcon)`
+export const ErrorIcon = styled.View`
   margin-right: 8px;
 `;
 

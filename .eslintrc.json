@@ -45,8 +45,10 @@
       "no-use-before-define": "off",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
-      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "react/require-default-props": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       "import/extensions": [
         "error",
         "ignorePackages",

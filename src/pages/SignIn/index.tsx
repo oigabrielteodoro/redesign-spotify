@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import { Platform, Alert } from 'react-native';
 
@@ -14,7 +14,6 @@ import Button from '../../components/Button';
 import SignInRules from './rules/SignInRules';
 
 import SignInFields from './dtos/SignInFields';
-import SignInValues from './dtos/SignInValues';
 
 import {
   Wrapper,
@@ -35,11 +34,9 @@ const SignIn = () => {
 
   const passwordInputRef = useRef<any>(null);
 
-  const { handleSubmit, ...rest } = useForm<SignInValues>({
-    mode: 'all',
-  });
+  const { handleSubmit, ...rest } = useForm();
 
-  function onSubmit(_: SignInValues) {
+  function onSubmit() {
     Alert.alert('Authenticated!', 'You have been authenticated to your Spotify account!');
 
     setTimeout(() => {

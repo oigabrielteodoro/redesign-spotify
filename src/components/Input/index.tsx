@@ -1,13 +1,12 @@
-/* eslint-disable react/require-default-props */
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 
-import FeatherIcon from 'react-native-vector-icons/Feather';
-
-import { TextInputProps, TextInput as ReactTextInput } from 'react-native';
+import { TextInputProps } from 'react-native';
 
 import { RegisterOptions, useController, useFormContext } from 'react-hook-form';
 
 import { useTheme } from 'styled-components';
+
+import useIcons from '../../hooks/useIcons';
 
 import { Wrapper, Container, TextInput, Icon as IconElement, ErrorContainer, ErrorIcon, ErrorText } from './styles';
 
@@ -18,10 +17,10 @@ interface InputProps extends Omit<TextInputProps, 'ref'> {
   rules?: Exclude<RegisterOptions, 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
 }
 
-FeatherIcon.loadFont();
-
 const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }: InputProps) => {
   const theme = useTheme();
+
+  const { getIcon } = useIcons();
 
   const { watch, control, errors } = useFormContext();
 
@@ -69,7 +68,7 @@ const Input = ({ inputRef, name, icon: Icon, rules, defaultValue = '', ...rest }
 
       {errorMessage && (
         <ErrorContainer>
-          <ErrorIcon name="alert-circle" size={20} color={theme.colors.red} />
+          <ErrorIcon>{getIcon('alert-circle', 20, theme.colors.red, 'feather')}</ErrorIcon>
 
           <ErrorText>{errorMessage.message}</ErrorText>
         </ErrorContainer>
