@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native';
 
 import { ThemeProvider } from 'styled-components';
-import { NavigationContainer } from '@react-navigation/native';
 
 import Navigation from './navigation';
 
@@ -22,9 +21,7 @@ const App = () => {
     <ThemeProvider theme={dark}>
       <StatusBar barStyle="light-content" backgroundColor={dark.colors.black} translucent />
 
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
+      <Navigation />
     </ThemeProvider>
   );
 };

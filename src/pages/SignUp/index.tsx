@@ -38,7 +38,7 @@ const SignUp = () => {
     Alert.alert('Created account!', 'You have created your Spotify account!');
 
     setTimeout(() => {
-      navigation.navigate('Home');
+      navigation.navigate('Dashboard');
     }, 1000);
   }
 

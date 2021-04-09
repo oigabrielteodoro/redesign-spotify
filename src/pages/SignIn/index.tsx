@@ -39,7 +39,7 @@ const SignIn = () => {
     Alert.alert('Authenticated!', 'You have been authenticated to your Spotify account!');
 
     setTimeout(() => {
-      navigation.navigate('Home');
+      navigation.navigate('Dashboard');
     }, 1000);
   }
 
