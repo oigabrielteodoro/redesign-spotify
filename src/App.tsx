@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 
 import { StatusBar } from 'react-native';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import { ThemeProvider } from 'styled-components';
 
 import Navigation from './navigation';
@@ -14,6 +16,8 @@ const App = () => {
   const { loadIcons } = useIcons();
 
   useEffect(() => {
+    SplashScreen.hide();
+
     loadIcons();
   }, [loadIcons]);
 

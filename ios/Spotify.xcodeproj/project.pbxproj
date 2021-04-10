@@ -18,9 +18,9 @@
 		4FAC12A32132CAD5E4DF879B /* libPods-Spotify-SpotifyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C442CD30CF1F03D292564589 /* libPods-Spotify-SpotifyTests.a */; };
 		500857E9ED8148B992FDD74E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 673E2DEB511949CC8DE31AA0 /* Rubik-Bold.ttf */; };
 		690BC96296DB4DB7870BF762 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAE0B8B86777498E8A70BEE3 /* Rubik-BlackItalic.ttf */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8306F1D2113F40AD94F92C16 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF32CADA3E14E2AA91A1C6A /* Rubik-SemiBold.ttf */; };
 		97382B6271EE47A2B288EBA9 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2FDA035E774CB0AACBF84D /* Rubik-Light.ttf */; };
+		9B6B2536262126FD0038CA19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */; };
 		B36ABA07A7F589B9B0C81CC1 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB6C1A80B07A2F536C2F934 /* libPods-Spotify.a */; };
 		B8A62D5FBF034F02B2AFB612 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38BF0CFC8E684911B274CA99 /* Rubik-Italic.ttf */; };
 		C0A6963A140146769856F80A /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA73C0E73E1148C89BA075F5 /* Rubik-MediumItalic.ttf */; };
@@ -64,7 +64,7 @@
 		45EE47F30D09E370A84A5324 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
 		673E2DEB511949CC8DE31AA0 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Bold.ttf"; path = "../assets/fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		7E2FDA035E774CB0AACBF84D /* Rubik-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Light.ttf"; path = "../assets/fonts/Rubik-Light.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Spotify/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Spotify/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DAD6BB43FE10FA0D72758B7 /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		AAE0B8B86777498E8A70BEE3 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../assets/fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		C2E53C13AED1455FA9176517 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-ExtraBold.ttf"; path = "../assets/fonts/Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = Spotify;
@@ -292,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				CEFFD0D1BFED4BB0B19CE322 /* Rubik-Black.ttf in Resources */,
 				690BC96296DB4DB7870BF762 /* Rubik-BlackItalic.ttf in Resources */,
@@ -302,6 +301,7 @@
 				2B618C8B7FAF4AFD858570C7 /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				B8A62D5FBF034F02B2AFB612 /* Rubik-Italic.ttf in Resources */,
 				97382B6271EE47A2B288EBA9 /* Rubik-Light.ttf in Resources */,
+				9B6B2536262126FD0038CA19 /* LaunchScreen.storyboard in Resources */,
 				386F38E1A18445AEB38A4548 /* Rubik-LightItalic.ttf in Resources */,
 				E9626E6EFA4549D898FDE51A /* Rubik-Medium.ttf in Resources */,
 				C0A6963A140146769856F80A /* Rubik-MediumItalic.ttf in Resources */,
