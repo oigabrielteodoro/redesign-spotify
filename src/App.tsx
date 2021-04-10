@@ -6,6 +6,8 @@ import SplashScreen from 'react-native-splash-screen';
 
 import { ThemeProvider } from 'styled-components';
 
+import AppProvider from './context';
+
 import Navigation from './navigation';
 
 import dark from './styles/themes/dark';
@@ -27,7 +29,9 @@ const App = () => {
     <ThemeProvider theme={dark}>
       <StatusBar barStyle="light-content" backgroundColor={dark.colors.black} translucent />
 
-      <Navigation />
+      <AppProvider>
+        <Navigation />
+      </AppProvider>
     </ThemeProvider>
   );
 };

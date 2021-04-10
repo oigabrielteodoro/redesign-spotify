@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import dark from '../../styles/themes/dark';
 
 export const Wrapper = styled(LinearGradient).attrs({

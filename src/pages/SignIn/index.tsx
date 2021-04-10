@@ -1,10 +1,14 @@
 import React, { useRef } from 'react';
 
-import { Platform, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { Platform, Alert, KeyboardAvoidingView, ScrollView, Keyboard } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
 import { useForm, FormProvider } from 'react-hook-form';
+
+import useIcons from '../../hooks/useIcons';
+
+import { useAuth } from '../../context/auth';
 
 import logoImg from '../../../assets/img/logo.png';
 
@@ -29,13 +33,24 @@ import {
 } from './styles';
 
 const SignIn = () => {
+  const { signIn } = useAuth();
+
   const navigation = useNavigation();
 
   const passwordInputRef = useRef<any>(null);
 
+  const { getIcon } = useIcons();
+
   const { handleSubmit, ...rest } = useForm();
 
-  function onSubmit() {
+  async function onSubmit() {
+    Keyboard.dismiss();
+
+    await signIn({
+      email: 'oi@gabrielteodoro.com',
+      password: '123456',
+    });
+
     Alert.alert('Authenticated!', 'You have been authenticated to your Spotify account!');
 
     setTimeout(() => {
