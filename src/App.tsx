@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { StatusBar } from 'react-native';
+import { StatusBar, LogBox } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
 
@@ -11,6 +11,8 @@ import Navigation from './navigation';
 import dark from './styles/themes/dark';
 
 import useIcons from './hooks/useIcons';
+
+LogBox.ignoreLogs(['RCTBridge required dispatch_sync to load RCTDevLoadingView. This may lead to deadlocks']);
 
 const App = () => {
   const { loadIcons } = useIcons();

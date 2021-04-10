@@ -1,10 +1,16 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Wrapper, Container } from './styles';
 
 const Dashboard = () => {
-  return <Text>Dashboard</Text>;
+  return (
+    <Wrapper>
+      <Container>
+        <Text>Teste</Text>
+      </Container>
+    </Wrapper>
+  );
 };
 
 export default Dashboard;

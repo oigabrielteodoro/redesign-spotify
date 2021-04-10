@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 interface VectorIcon {
   [name: string]: any;
@@ -14,8 +16,10 @@ const vectorIcons: VectorIcon = {
 
 export default function useIcons() {
   function loadIcons() {
+    Ionicons.loadFont();
     FeatherIcon.loadFont();
     AntDesignIcon.loadFont();
+    MaterialIcons.loadFont();
   }
 
   function getIcon(name: string, size: number, color: string, lib: string) {
