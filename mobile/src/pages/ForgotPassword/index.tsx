@@ -8,8 +8,8 @@ import { useForm, FormProvider } from 'react-hook-form';
 
 import logoImg from '../../../assets/img/logo.png';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Input from '~/components/Input';
+import Button from '~/components/Button';
 
 import ForgotPasswordRules from './rules/ForgotPasswordRules';
 

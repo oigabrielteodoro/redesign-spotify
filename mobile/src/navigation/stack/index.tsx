@@ -2,9 +2,10 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SignInPage from '../../pages/SignIn';
-import SignUpPage from '../../pages/SignUp';
-import ForgotPasswordPage from '../../pages/ForgotPassword';
+import SignInPage from '~/pages/SignIn';
+import SignUpPage from '~/pages/SignUp';
+
+import ForgotPasswordPage from '~/pages/ForgotPassword';
 
 import Tabs from '../tabs';
 

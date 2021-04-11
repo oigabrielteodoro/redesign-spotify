@@ -6,14 +6,14 @@ import { useNavigation } from '@react-navigation/native';
 
 import { useForm, FormProvider } from 'react-hook-form';
 
-import useIcons from '../../hooks/useIcons';
+import useIcons from '~/hooks/useIcons';
 
-import { useAuth } from '../../context/auth';
+import { useAuth } from '~/context/auth';
+
+import Input from '~/components/Input';
+import Button from '~/components/Button';
 
 import logoImg from '../../../assets/img/logo.png';
-
-import Input from '../../components/Input';
-import Button from '../../components/Button';
 
 import SignInRules from './rules/SignInRules';
 

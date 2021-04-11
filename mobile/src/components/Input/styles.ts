@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components/native';
 
-import { lighten } from 'polished';
-
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 interface ContainerProps {

@@ -6,7 +6,7 @@ import { RegisterOptions, useController, useFormContext } from 'react-hook-form'
 
 import { useTheme } from 'styled-components';
 
-import useIcons from '../../hooks/useIcons';
+import useIcons from '~/hooks/useIcons';
 
 import {
   Wrapper,

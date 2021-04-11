@@ -1,12 +1,12 @@
 import { AxiosRequestConfig } from 'axios';
-import useSWR, { ConfigInterface } from 'swr';
+import useSWR, { SWRConfiguration } from 'swr';
 
-import api from '../services/api';
+import api from '~/services/api';
 
 export function useFetch<Data = any, Error = any>(
   url: string | null,
   config?: AxiosRequestConfig,
-  options?: ConfigInterface,
+  options?: SWRConfiguration,
 ) {
   const { data, error, isValidating, mutate } = useSWR<Data, Error>(
     url,

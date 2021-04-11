@@ -2,8 +2,7 @@ import styled from 'styled-components/native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Platform } from 'react-native';
-import dark from '../../styles/themes/dark';
+import dark from '~/styles/themes/dark';
 
 export const Wrapper = styled(LinearGradient).attrs({
   start: {

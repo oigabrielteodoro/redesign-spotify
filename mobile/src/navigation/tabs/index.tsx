@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { useTheme } from 'styled-components';
 
-import DashboardPage from '../../pages/Dashboard';
+import DashboardPage from '~/pages/Dashboard';
 
 const Tab = createBottomTabNavigator();
 
