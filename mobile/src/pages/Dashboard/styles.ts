@@ -2,6 +2,8 @@ import styled from 'styled-components/native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+
 import dark from '~/styles/themes/dark';
 
 export const Wrapper = styled(LinearGradient).attrs({
@@ -17,7 +19,7 @@ export const Wrapper = styled(LinearGradient).attrs({
 })`
   flex: 1;
 
-  padding: 0 30px 50px;
+  padding: ${getStatusBarHeight() + 30}px 30px 50px;
 `;
 
 export const Container = styled.ScrollView.attrs({
@@ -25,3 +27,9 @@ export const Container = styled.ScrollView.attrs({
   contentContainerStyle: { flex: 1 },
   showsVerticalScrollIndicator: false,
 })``;
+
+export const Title = styled.Text`
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.typography.bold};
+  font-size: 18px;
+`;

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
 
-import { Wrapper, Container } from './styles';
+import { Wrapper, Container, Title } from './styles';
 
 const Dashboard = () => {
   return (
     <Wrapper>
       <Container>
-        <Text>Teste</Text>
+        <Title>Boa noite</Title>
       </Container>
     </Wrapper>
   );
