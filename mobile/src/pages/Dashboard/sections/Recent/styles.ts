@@ -32,7 +32,9 @@ export const ArtistItemImage = styled.Image`
   width: 50px;
   height: 50px;
 
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
   margin-right: 16px;
 `;
 
@@ -41,8 +43,6 @@ export const ArtistItemText = styled.Text`
   font-size: 14px;
   font-family: ${({ theme }) => theme.typography.medium};
 `;
-
-export const AnimationContainer = styled.TouchableOpacity``;
 
 export const ArtistItemAnimationContainer = styled(LottieView).attrs({
   autoPlay: true,

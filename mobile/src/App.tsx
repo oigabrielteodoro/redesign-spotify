@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { StatusBar, LogBox, NativeModules } from 'react-native';
+import { StatusBar, LogBox } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
 

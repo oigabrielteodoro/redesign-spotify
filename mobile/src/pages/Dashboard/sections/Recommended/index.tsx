@@ -1,30 +1,21 @@
 import React from 'react';
 
-import lottieSoundAnimation from '../../../../../assets/animations/lottie/sound-wave.json';
-
 import { artists } from '../../constants';
 
-import {
-  Wrapper,
-  Container,
-  ArtistItem,
-  ArtistItemImage,
-  ArtistItemText,
-  ArtistItemAnimationContainer,
-} from './styles';
+import { Wrapper, Title, Container, ArtistItem, ArtistItemImage, ArtistItemText } from './styles';
 
-const Recent = () => {
+const Recommended = () => {
   return (
     <Wrapper>
+      <Title>Artistas recomendados</Title>
+
       <Container
-        data={artists.slice(0, 4)}
+        data={artists}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <ArtistItem>
             <ArtistItemImage source={item.avatar_url} />
             <ArtistItemText>{item.name}</ArtistItemText>
-
-            {item.isPlaying && <ArtistItemAnimationContainer source={lottieSoundAnimation} />}
           </ArtistItem>
         )}
       />
@@ -32,4 +23,4 @@ const Recent = () => {
   );
 };
 
-export default Recent;
+export default Recommended;
