@@ -41,5 +41,5 @@ export const ArtistItemText = styled.Text`
   color: ${({ theme }) => theme.colors.lightGray};
   font-family: ${({ theme }) => theme.typography.regular};
 
-  margin-top: 8px;
+  margin-top: 12px;
 `;
