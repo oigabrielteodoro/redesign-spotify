@@ -2,7 +2,7 @@ import { FlatList } from 'react-native';
 
 import styled from 'styled-components/native';
 
-import ItemDTO from '~/pages/Dashboard/dtos/ItemDTO';
+import ArtistDTO from '~/pages/Dashboard/dtos/ArtistDTO';
 
 export const Wrapper = styled.View`
   margin-top: 16px;
@@ -10,7 +10,7 @@ export const Wrapper = styled.View`
   padding: 0 15px;
 `;
 
-export const Container = styled(FlatList as new () => FlatList<ItemDTO>).attrs({
+export const Container = styled(FlatList as new () => FlatList<ArtistDTO>).attrs({
   numColumns: 2,
   showsVerticalScrollIndicator: false,
 })``;

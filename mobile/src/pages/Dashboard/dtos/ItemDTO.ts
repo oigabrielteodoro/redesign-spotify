@@ -1,8 +1,6 @@
 interface ItemDTO {
   id: number;
-  name: string;
-  isPlaying: boolean;
-  avatar_url: string;
+  component: React.ComponentType;
 }
 
 export default ItemDTO;

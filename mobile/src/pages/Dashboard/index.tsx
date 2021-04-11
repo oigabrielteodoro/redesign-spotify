@@ -1,28 +1,29 @@
 import React from 'react';
 
-import useIcons from '~/hooks/useIcons';
-
+import Header from './sections/Header';
 import Recent from './sections/Recent';
 
-import { Wrapper, Container, Header, Title, HeaderButtons, HeaderIconButton } from './styles';
+import { Wrapper, Container } from './styles';
+
+const items = [
+  {
+    id: 0,
+    component: Header,
+  },
+  {
+    id: 1,
+    component: Recent,
+  },
+];
 
 const Dashboard = () => {
-  const { getIcon } = useIcons();
-
   return (
     <Wrapper>
-      <Container>
-        <Header>
-          <Title>Boa noite</Title>
-
-          <HeaderButtons>
-            <HeaderIconButton>{getIcon('clock', 20, '#fff', 'feather')}</HeaderIconButton>
-            <HeaderIconButton>{getIcon('settings', 20, '#fff', 'feather')}</HeaderIconButton>
-          </HeaderButtons>
-        </Header>
-
-        <Recent />
-      </Container>
+      <Container
+        data={items}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item: { component: Component } }) => <Component />}
+      />
     </Wrapper>
   );
 };
