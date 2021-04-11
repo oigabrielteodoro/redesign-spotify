@@ -1,7 +1,5 @@
 import React from 'react';
 
-import LottieView from 'lottie-react-native';
-
 import lottieSoundAnimation from '../../../../../assets/animations/lottie/sound-wave.json';
 
 import {
@@ -10,6 +8,7 @@ import {
   ArtistItem,
   ArtistItemImage,
   ArtistItemText,
+  AnimationContainer,
   ArtistItemAnimationContainer,
 } from './styles';
 
@@ -18,25 +17,25 @@ const items = [
     id: 1,
     name: 'Krawk',
     isPlaying: true,
-    avatar_url: '../../../../../assets/img/artists/Krawk.png',
+    avatar_url: require('../../../../../assets/img/artists/Krawk.png'),
   },
   {
     id: 2,
     name: 'Kant',
     isPlaying: false,
-    avatar_url: '../../../../../assets/img/artists/Krawk.png',
+    avatar_url: require('../../../../../assets/img/artists/Kant.png'),
   },
   {
     id: 3,
     name: 'Matuê',
     isPlaying: false,
-    avatar_url: '../../../../../assets/img/artists/Krawk.png',
+    avatar_url: require('../../../../../assets/img/artists/Matue.png'),
   },
   {
     id: 4,
     name: 'Mc Fioti',
     isPlaying: false,
-    avatar_url: '../../../../../assets/img/artists/Krawk.png',
+    avatar_url: require('../../../../../assets/img/artists/Fioti.png'),
   },
 ];
 
@@ -48,7 +47,7 @@ const Recent = () => {
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <ArtistItem>
-            <ArtistItemImage source={require('../../../../../assets/img/artists/Krawk.png')} />
+            <ArtistItemImage source={item.avatar_url} />
             <ArtistItemText>{item.name}</ArtistItemText>
 
             {item.isPlaying && <ArtistItemAnimationContainer source={lottieSoundAnimation} />}

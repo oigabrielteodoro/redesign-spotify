@@ -42,6 +42,8 @@ export const ArtistItemText = styled.Text`
   font-family: ${({ theme }) => theme.typography.medium};
 `;
 
+export const AnimationContainer = styled.TouchableOpacity``;
+
 export const ArtistItemAnimationContainer = styled(LottieView).attrs({
   autoPlay: true,
   loop: true,
@@ -53,5 +55,6 @@ export const ArtistItemAnimationContainer = styled(LottieView).attrs({
     { color: '#62C46F', keypath: 'Shape Layer 3' },
   ],
 })`
-  margin-left: 30px;
+  margin-left: 38px;
+  margin-top: 3.5px;
 `;
