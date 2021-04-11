@@ -2,6 +2,8 @@ import { FlatList } from 'react-native';
 
 import styled from 'styled-components/native';
 
+import LottieView from 'lottie-react-native';
+
 import ArtistDTO from '~/pages/Dashboard/dtos/ArtistDTO';
 
 export const Wrapper = styled.View`
@@ -15,7 +17,7 @@ export const Container = styled(FlatList as new () => FlatList<ArtistDTO>).attrs
   showsVerticalScrollIndicator: false,
 })``;
 
-export const PlaylistItem = styled.TouchableOpacity`
+export const ArtistItem = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 
@@ -26,7 +28,7 @@ export const PlaylistItem = styled.TouchableOpacity`
   margin: 5px;
 `;
 
-export const PlaylistItemImage = styled.Image`
+export const ArtistItemImage = styled.Image`
   width: 50px;
   height: 50px;
 
@@ -34,8 +36,22 @@ export const PlaylistItemImage = styled.Image`
   margin-right: 16px;
 `;
 
-export const PlaylistItemText = styled.Text`
+export const ArtistItemText = styled.Text`
   color: ${({ theme }) => theme.colors.white};
   font-size: 14px;
   font-family: ${({ theme }) => theme.typography.medium};
+`;
+
+export const ArtistItemAnimationContainer = styled(LottieView).attrs({
+  autoPlay: true,
+  loop: true,
+  resizeMode: 'contain',
+  colorFilters: [
+    { color: '#62C46F', keypath: 'SoundBar' },
+    { color: '#62C46F', keypath: 'Shape Layer 1' },
+    { color: '#62C46F', keypath: 'Shape Layer 2' },
+    { color: '#62C46F', keypath: 'Shape Layer 3' },
+  ],
+})`
+  margin-left: 30px;
 `;

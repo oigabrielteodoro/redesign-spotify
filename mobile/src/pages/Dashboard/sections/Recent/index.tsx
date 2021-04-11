@@ -1,7 +1,17 @@
-/* eslint-disable import/no-dynamic-require */
 import React from 'react';
 
-import { Wrapper, Container, PlaylistItem, PlaylistItemImage, PlaylistItemText } from './styles';
+import LottieView from 'lottie-react-native';
+
+import lottieSoundAnimation from '../../../../../assets/animations/lottie/sound-wave.json';
+
+import {
+  Wrapper,
+  Container,
+  ArtistItem,
+  ArtistItemImage,
+  ArtistItemText,
+  ArtistItemAnimationContainer,
+} from './styles';
 
 const items = [
   {
@@ -37,10 +47,12 @@ const Recent = () => {
         data={items}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <PlaylistItem>
-            <PlaylistItemImage source={require('../../../../../assets/img/artists/Krawk.png')} />
-            <PlaylistItemText>{item.name}</PlaylistItemText>
-          </PlaylistItem>
+          <ArtistItem>
+            <ArtistItemImage source={require('../../../../../assets/img/artists/Krawk.png')} />
+            <ArtistItemText>{item.name}</ArtistItemText>
+
+            {item.isPlaying && <ArtistItemAnimationContainer source={lottieSoundAnimation} />}
+          </ArtistItem>
         )}
       />
     </Wrapper>

@@ -15,14 +15,15 @@
 		2B618C8B7FAF4AFD858570C7 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DB5937AF827423F84FCE8AD /* Rubik-ExtraBoldItalic.ttf */; };
 		386F38E1A18445AEB38A4548 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 379E1826D94D491ABDF61194 /* Rubik-LightItalic.ttf */; };
 		421E3DC25BF04404B67F147F /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E90C1FFEFC484DC9825903A1 /* Rubik-BoldItalic.ttf */; };
-		4FAC12A32132CAD5E4DF879B /* libPods-Spotify-SpotifyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C442CD30CF1F03D292564589 /* libPods-Spotify-SpotifyTests.a */; };
 		500857E9ED8148B992FDD74E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 673E2DEB511949CC8DE31AA0 /* Rubik-Bold.ttf */; };
 		690BC96296DB4DB7870BF762 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAE0B8B86777498E8A70BEE3 /* Rubik-BlackItalic.ttf */; };
 		8306F1D2113F40AD94F92C16 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF32CADA3E14E2AA91A1C6A /* Rubik-SemiBold.ttf */; };
+		8E9B30B46D853B3739B6CCBE /* libPods-Spotify-SpotifyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B3E127AB1ED781ED52F073 /* libPods-Spotify-SpotifyTests.a */; };
 		97382B6271EE47A2B288EBA9 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E2FDA035E774CB0AACBF84D /* Rubik-Light.ttf */; };
+		9B0C2E652623378C00F92DC3 /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C2E642623378C00F92DC3 /* Spotify.swift */; };
 		9B6B2536262126FD0038CA19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */; };
-		B36ABA07A7F589B9B0C81CC1 /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB6C1A80B07A2F536C2F934 /* libPods-Spotify.a */; };
 		B8A62D5FBF034F02B2AFB612 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38BF0CFC8E684911B274CA99 /* Rubik-Italic.ttf */; };
+		BAC50FE81543DCA3224F5E8B /* libPods-Spotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2388A5563068669B1069CE /* libPods-Spotify.a */; };
 		C0A6963A140146769856F80A /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA73C0E73E1148C89BA075F5 /* Rubik-MediumItalic.ttf */; };
 		CEFFD0D1BFED4BB0B19CE322 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C81A81BFB45495DAD6D3ED2 /* Rubik-Black.ttf */; };
 		DACF4CD2E7C54126B006D336 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 169CAD06DE054008ACD29316 /* Rubik-SemiBoldItalic.ttf */; };
@@ -59,16 +60,18 @@
 		2DB5937AF827423F84FCE8AD /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-ExtraBoldItalic.ttf"; path = "../assets/fonts/Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		379E1826D94D491ABDF61194 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../assets/fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		38BF0CFC8E684911B274CA99 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic.ttf"; path = "../assets/fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; };
-		3FB6C1A80B07A2F536C2F934 /* libPods-Spotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF32CADA3E14E2AA91A1C6A /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-SemiBold.ttf"; path = "../assets/fonts/Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		45EE47F30D09E370A84A5324 /* Pods-Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.release.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		4C2388A5563068669B1069CE /* libPods-Spotify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		673E2DEB511949CC8DE31AA0 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Bold.ttf"; path = "../assets/fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		7E2FDA035E774CB0AACBF84D /* Rubik-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Light.ttf"; path = "../assets/fonts/Rubik-Light.ttf"; sourceTree = "<group>"; };
+		9B0C2E642623378C00F92DC3 /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		9B0C2E68262337A000F92DC3 /* Spotify-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spotify-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Spotify/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DAD6BB43FE10FA0D72758B7 /* Pods-Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Spotify/Pods-Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		AAE0B8B86777498E8A70BEE3 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../assets/fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		C2E53C13AED1455FA9176517 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-ExtraBold.ttf"; path = "../assets/fonts/Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
-		C442CD30CF1F03D292564589 /* libPods-Spotify-SpotifyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify-SpotifyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6B3E127AB1ED781ED52F073 /* libPods-Spotify-SpotifyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotify-SpotifyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA73C0E73E1148C89BA075F5 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-MediumItalic.ttf"; path = "../assets/fonts/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		E90C1FFEFC484DC9825903A1 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BoldItalic.ttf"; path = "../assets/fonts/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -79,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FAC12A32132CAD5E4DF879B /* libPods-Spotify-SpotifyTests.a in Frameworks */,
+				8E9B30B46D853B3739B6CCBE /* libPods-Spotify-SpotifyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B36ABA07A7F589B9B0C81CC1 /* libPods-Spotify.a in Frameworks */,
+				BAC50FE81543DCA3224F5E8B /* libPods-Spotify.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				9B6B2535262126FD0038CA19 /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9B0C2E642623378C00F92DC3 /* Spotify.swift */,
+				9B0C2E68262337A000F92DC3 /* Spotify-Bridging-Header.h */,
 			);
 			name = Spotify;
 			sourceTree = "<group>";
@@ -128,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				3FB6C1A80B07A2F536C2F934 /* libPods-Spotify.a */,
-				C442CD30CF1F03D292564589 /* libPods-Spotify-SpotifyTests.a */,
+				4C2388A5563068669B1069CE /* libPods-Spotify.a */,
+				C6B3E127AB1ED781ED52F073 /* libPods-Spotify-SpotifyTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,7 +215,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				B7B1771746D40B2C632121AA /* [CP] Embed Pods Frameworks */,
-				CF29B4F36A7537A15570D4BE /* [CP] Copy Pods Resources */,
+				C2CEBFBC45E29079B30525E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,7 +238,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				243E7CF1EDE6E6CDF0889201 /* [CP] Embed Pods Frameworks */,
-				3F6CABE3298EBD3F4CA1BB54 /* [CP] Copy Pods Resources */,
+				977E06D509A4EDA65AE3BCA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,7 +262,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -345,7 +350,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spotify/Pods-Spotify-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3F6CABE3298EBD3F4CA1BB54 /* [CP] Copy Pods Resources */ = {
+		977E06D509A4EDA65AE3BCA3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,7 +406,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spotify-SpotifyTests/Pods-Spotify-SpotifyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF29B4F36A7537A15570D4BE /* [CP] Copy Pods Resources */ = {
+		C2CEBFBC45E29079B30525E8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B0C2E652623378C00F92DC3 /* Spotify.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -494,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06597922124F36C2B0895D0C /* Pods-Spotify-SpotifyTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -521,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E80E60E95C2CC14CC7B29EE /* Pods-Spotify-SpotifyTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = SpotifyTests/Info.plist;
@@ -565,6 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.MyRedesignSpotify;
 				PRODUCT_NAME = Spotify;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -595,6 +604,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.MyRedesignSpotify;
 				PRODUCT_NAME = Spotify;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
