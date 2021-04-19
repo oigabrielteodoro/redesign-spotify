@@ -5,6 +5,7 @@ import Header from './sections/Header';
 import Recent from './sections/Recent';
 import MostPlayed from './sections/MostPlayed';
 import Recommended from './sections/Recommended';
+import NewCustomPlaylist from './sections/NewCustomPlaylist';
 
 import { Wrapper, Container } from './styles';
 
@@ -24,6 +25,10 @@ const items = [
   {
     id: 3,
     component: MostPlayed,
+  },
+  {
+    id: 4,
+    component: NewCustomPlaylist,
   },
 ];
 

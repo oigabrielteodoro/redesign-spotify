@@ -13,7 +13,7 @@ const Recommended = () => {
         data={artists}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <ArtistItem>
+          <ArtistItem activeOpacity={0.8}>
             <ArtistItemImage source={item.avatar_url} />
             <ArtistItemText>{item.name}</ArtistItemText>
           </ArtistItem>

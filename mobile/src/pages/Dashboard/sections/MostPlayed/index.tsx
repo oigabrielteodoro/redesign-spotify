@@ -22,7 +22,7 @@ const MostPlayed = () => {
         data={albums}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
-          <AlbumItem>
+          <AlbumItem activeOpacity={0.8}>
             <AlbumItemImage source={item.thumbnail_url} />
             <AlbumItemTextContainer>
               <AlbumItemText>{item.name}</AlbumItemText>
