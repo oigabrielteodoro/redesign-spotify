@@ -36,3 +36,24 @@ export const artists = [
     avatar_url: require('../../../../assets/img/artists/JayA.png'),
   },
 ];
+
+export const albums = [
+  {
+    id: 1,
+    name: 'Wally',
+    amount: 17,
+    thumbnail_url: require('../../../../assets/img/albums/Wally.png'),
+  },
+  {
+    id: 2,
+    name: 'Matuê',
+    amount: 5,
+    thumbnail_url: require('../../../../assets/img/albums/MaquinaDoTempo.png'),
+  },
+  {
+    id: 3,
+    name: 'Dxbxchxdx',
+    amount: 11,
+    thumbnail_url: require('../../../../assets/img/albums/Debochado.png'),
+  },
+];
