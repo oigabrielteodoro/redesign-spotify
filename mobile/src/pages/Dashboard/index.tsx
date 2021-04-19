@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MusicPlayer from '~/components/MusicPlayer';
+
 import Header from './sections/Header';
 
 import Recent from './sections/Recent';
@@ -40,6 +42,8 @@ const Dashboard = () => {
         keyExtractor={item => item.id.toString()}
         renderItem={({ item: { component: Component } }) => <Component />}
       />
+
+      <MusicPlayer />
     </Wrapper>
   );
 };

@@ -3,6 +3,7 @@ import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -14,6 +15,7 @@ const vectorIcons: VectorIcon = {
   ionicons: Ionicons,
   feather: FeatherIcon,
   antDesign: AntDesignIcon,
+  fontAwesome: FontAwesomeIcon,
   materialIcons: MaterialIcons,
   materialCommunityIcons: MaterialCommunityIcons,
 };
@@ -24,6 +26,7 @@ export default function useIcons() {
     FeatherIcon.loadFont();
     AntDesignIcon.loadFont();
     MaterialIcons.loadFont();
+    FontAwesomeIcon.loadFont();
     MaterialCommunityIcons.loadFont();
   }
 
